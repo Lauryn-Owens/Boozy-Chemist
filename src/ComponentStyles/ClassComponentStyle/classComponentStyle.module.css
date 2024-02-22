@@ -1,0 +1,30 @@
+#classInformationContainer{
+    background-color: var(--lightPink);
+    width:95%;
+    height:max-content;
+    margin: auto;
+    border: 0.3rem solid var(--bubbleGumPink);
+    border-radius:0.2rem;
+    margin-bottom: 2rem;
+}
+#classInformationContainer > *{
+    margin-left:2rem;
+    padding-right: 0.4rem;
+}
+#classInformationContainer h1{
+    width:95%;
+}
+#classInformationContainer h1::after{
+    content:"";
+    display:block;
+    margin:0 auto;
+    width:90%;
+    padding-top: 10px;
+    border-bottom: 1px solid var(--purple);
+}
+#classInformationContainer ul{
+    list-style-type: square;
+}
+#classInformationContainer ul li{
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,103 @@
+#homePageBodyContainer {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  opacity: 0.8;
+}
+#homePageContent {
+  max-width: 75%;
+  position: absolute;
+  top: 10%;
+  left: 55%;
+}
+#homePageContent > * {
+  margin-bottom: 4%;
+}
+#homePageContent h1 {
+  padding-top: 5%;
+  font-size: 4rem;
+}
+#homePageContent h1,
+#homePageContent p {
+  color: black;
+}
+#homePageContent p {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+}
+#viewClassesButton {
+  position: relative;
+}
+#viewClassesButton button {
+  padding: 1rem;
+  text-align: center;
+  width: 8rem;
+  height: 4rem;
+  color: var(--lightPink);
+  background-color: var(--purple);
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+#shadowsButton {
+  position: absolute;
+  left: 2rem;
+  top: 25%;
+  z-index: 0;
+  width: 8rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--purple);
+}
+.links {
+  text-decoration: none;
+  color: var(--lightPink);
+}
+/**For ipad/tablet and smaller*/
+@media (max-width: 800px) {
+  #homePageContent {
+    width: 75%;
+    margin: 0;
+    margin-top: 15%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  #homePageContent h1 {
+    font-size: 2.7rem;
+  }
+  #homePageContent p {
+    font-size: 1.59rem;
+  }
+  #homePageContent {
+    top: 20%;
+  }
+}
+@media (max-width: 450px) {
+  #homePageContent {
+    margin-top: 30%;
+  }
+  #homePageContent h1 {
+    font-size: 2rem;
+  }
+  #homePageContent p {
+    font-size: 1rem;
+  }
+  #viewClassesButton button {
+    width: 7rem;
+    height: 3.5rem;
+  }
+  #shadowsButton {
+    width: 7rem;
+    height: 3.5rem;
+  }
+}

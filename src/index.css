@@ -1,0 +1,35 @@
+:root{
+  --purple:#5E548E;
+  --lightPink:#F3EAF3;
+  --black:#191919;
+  --bubbleGumPink:#FFB6C1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding:0;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  font-family: "Playfair", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.on, .off{
+  display: inline-block;
+   background-color:white;
+}
+.on{
+  color:yellow;
+}
+.off{
+  color:black;
+}
+.App{
+ /** so that the footer can stay at the bottom of the screen*/
+ /**The height is the entire vh and the footer is 
+ absolute  to it so it stays at the bottom of it*/
+  min-height: 100vh;
+}

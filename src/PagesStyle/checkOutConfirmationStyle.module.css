@@ -1,0 +1,14 @@
+main{
+    width:90%;
+    margin: auto;
+}
+#continueShoppingButton{
+    margin-bottom: 2rem;
+}
+#continueShoppingLink{
+    text-decoration: none;
+    color:var(--lightPink);
+}
+#continueShoppingLink:hover{
+    color:var(--purple);
+}

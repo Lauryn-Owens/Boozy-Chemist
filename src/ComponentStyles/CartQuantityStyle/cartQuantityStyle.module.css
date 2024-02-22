@@ -1,0 +1,10 @@
+    #cartQuantity{
+        background-color: var(--purple);
+        border-radius: 0.2rem;
+        padding:2px 3px;
+        color:var(--lightPink);
+        position: absolute;
+        bottom:55%;
+        left:80%;
+        z-index:1;
+    }

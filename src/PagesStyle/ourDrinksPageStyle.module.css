@@ -1,0 +1,67 @@
+.ourDrinksTitle {
+  text-align: center;
+  font-weight: 400;
+}
+.ourDrinksTitle::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding-top: 20px;
+  border-bottom: 1px solid var(--bubbleGumPink);
+}
+.drinkContainer {
+  margin-top: 3rem;
+  margin: auto;
+  width: 85%;
+  display: grid;
+  /*fix this*/
+  grid-template-columns: repeat(3, minmax(200px, 290px));
+  grid-gap: 1rem 2rem;
+}
+.cocktailCard {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 350px;
+  border-radius: 0.3rem;
+  position: relative;
+}
+
+.cocktailCard .cocktailImage {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 9rem;
+}
+.loadMoreButton {
+  grid-column: 1/4;
+  padding: 1rem 2rem;
+  width: 50%;
+  margin-top: 1.5rem;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  font-weight: 250;
+  font-size: 1.2rem;
+  margin-left: 35%;
+}
+
+@media (max-width: 663px) {
+  .drinkContainer {
+    grid-template-columns: repeat(2, minmax(200px, 490px));
+  }
+  .cocktailCard {
+    height: 250px;
+  }
+  .loadMoreButton {
+    grid-column: 1/3;
+  }
+}
+@media (max-width: 400px) {
+  .drinkContainer {
+    grid-template-columns: repeat(1, minmax(100%, 100%));
+  }
+  .loadMoreButton {
+    grid-column: 1/2;
+  }
+}

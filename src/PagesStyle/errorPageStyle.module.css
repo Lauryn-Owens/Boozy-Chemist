@@ -1,0 +1,59 @@
+#ErrorPageBodyContainer{
+    min-width:100%;
+    max-width: 100%;
+    min-height:100vh;
+    margin-top: 1rem; 
+}
+#ErrorPageBodyContent{
+    width:85%;
+    height:70vh;
+    margin:auto;
+    border:0.3rem solid black;
+    border-radius: 0.2rem;
+    display:flex;
+    background-color: var(--lightPink);
+}
+#ErrorPageBodyContent > *{
+    width:100%;
+    height:100%;
+}
+#ErrorPageBodyContent .leftImageSection img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+#ErrorPageBodyContent .rightDetailsSection{
+    padding:1rem 0.5rem 0rem 1rem;
+}
+#ErrorPageBodyContent h1{
+    font-size:1.8rem;
+    line-height: 3rem;
+    font-weight: 600;
+}
+#ErrorPageBodyContent button{
+    background-color: var(--purple);
+    border:none;
+    padding:1rem;
+    border-radius: 1rem;
+}
+#ErrorPageBodyContent button .link{
+    color:white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+}
+#ErrorPageBodyContent button:hover{
+    background-color: var(--lightPink);
+}
+#ErrorPageBodyContent button .link:hover{
+    color:var(--purple);
+}
+@media (max-width:475px) {
+    #ErrorPageBodyContent{
+        flex-direction: column;
+    }
+    #ErrorPageBodyContent .leftImageSection{
+        height:45%;
+    }
+}
+

@@ -1,0 +1,29 @@
+.commentSectionContainer{
+    width:75%;
+    margin-top:2rem;
+    margin-left:10%;
+}
+.commentSectionContainer #commentInputLabel{
+    margin-right: 0.6rem;
+}
+.commentSectionContainer .inputSection{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: inline-block;
+}
+.commentSectionContainer .inputSection:hover{
+   border-bottom:0.2rem solid black;
+   
+}
+.commentSectionContainer #commentInput{
+    padding:0.3rem 0 0.3rem 0;
+    border: none;
+    outline: none;
+}
+.commentSectionContainer .addComment{
+    display: inline-block;
+}
+
+.commentSectionContainer .addComment:hover{
+    color:black;
+    background-color:var(--bubbleGumPink);
+}

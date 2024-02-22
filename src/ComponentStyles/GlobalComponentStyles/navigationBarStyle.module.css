@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.navigationHeader{
+    display:flex;
+    align-items:center;
+    box-shadow: 0px 15px 10px -15px #111;
+    justify-content: space-between;
+}
+.linkList{
+    list-style:none;
+    display:flex;
+    gap:1.5rem;
+    align-items: center;
+    transition: 5s ease-in-out;
+}
+.linkList > * > *, #loginButton > *{
+    text-decoration:none;
+    color:black;
+    font-size: 1rem;
+    font-weight: 600;
+    padding:0.3rem;
+    text-align: center;
+}
+.linkList li:nth-child(1):hover::after,
+.linkList li:nth-child(2):hover::after{
+    content: "";
+    display: block;
+    border:0.1rem solid var(--purple);
+    width:95px;
+}
+.linkList li:nth-child(3):hover::after{
+    content: "";
+    display: block;
+    border:0.1rem solid var(--purple);
+    width:55px;
+}
+#loginButton:hover{
+    border:0.15rem solid var(--purple);
+    background-color: var(--lightPink);
+}
+#loginButton{
+    border:0.1rem solid var(--purple);
+    border-radius:0.4rem;
+    padding:0.4rem 0.7rem;
+    outline: none;
+    background-color: white;
+    color:var(--purple);
+    display: flex;
+    margin-right: 2rem;
+}
+#loginButton .loginButtonLink{
+    font-weight: 600;
+}
+#toggleMenu{
+    display: none;
+}
+#shoppingCartLogo{
+    width:2rem;
+    height:2rem;
+    z-index:0;
+}
+#shoppingCart{
+    position: relative;
+    width:2.2rem;
+}
+.navigationList{
+    z-index: 0;
+}
+/*Logo styling*/
+.logoContainer{
+    display: flex;
+    gap:1rem;
+    align-items:center;
+    margin:0.3rem 2rem 0.5rem 0.8rem;
+    margin-right: auto;
+}
+.logoContainer h1{
+    font-weight: 600;
+}
+#logoImage{
+    width:3rem;
+    height:3rem;
+    color:var(--purple);
+}
+.logoImage{
+    width:2rem;
+    height:2rem;
+}
+/*Smaller Devices*/
+@media (max-width:800px){
+    .navigationHeader{
+        position: relative;
+        z-index: 1;
+    }
+    .logoContainer{
+        position:relative;
+        left:55%;
+        
+    }
+    .hamburgerIconContainer{
+        width:2rem;
+        height:2rem;
+    }
+    .hamburgerIconContainer > *{
+        width:100%;
+        height:0.3rem;
+        background-color:var(--black);
+        margin-bottom:0.5rem;
+    }
+    .hamburgerIconContainer{
+        margin-left: 1rem;
+    }
+    .navigationList{
+        position:absolute;
+        top:100%;
+        width:90%;
+        padding-top: 2rem;
+        background-color: white;
+    }
+    .linkList{
+        flex-direction: column;
+    }
+    .linkList li{
+        width:100%;
+        margin-right:auto;
+        margin-left: 0;
+    }
+    .navigationList{
+        border:2px solid var(--black);
+        width:100%;
+    }
+    .navigationList{
+        display: none;
+        
+    }
+    /*hamburger toggle functionality*/
+    #toggleMenu:checked~nav {
+    display: block;
+   
+    }
+}
+@media(max-width:600px){
+    .logoContainer{
+        left:37%;
+    }
+}

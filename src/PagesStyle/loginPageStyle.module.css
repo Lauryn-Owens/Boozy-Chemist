@@ -1,0 +1,64 @@
+.loginContainer {
+  margin-top: 2rem;
+}
+.loginContent {
+  border: 2px solid var(--purple);
+  width: 75%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.loginContainer .loginContent .loginHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.2rem solid rgba(238, 238, 238, 1);
+}
+.loginContainer .loginContent .loginHeader h3 {
+  color: var(--purple);
+}
+.loginContainer .loginContent form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.2rem;
+}
+.loginContainer .loginContent form input {
+  width: 55%;
+  padding: 4px 0;
+}
+.loginContainer .loginContent form input:hover {
+  border: 0.2rem solid var(--bubbleGumPink);
+}
+.loginContainer .loginContent form button {
+  font-weight: bolder;
+  width: 45%;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.loginContainer .loginContent form button:hover {
+  background-color: var(--bubbleGumPink);
+}
+.loginContainer .loginContent .loginFooter {
+  border-top: 0.2rem solid rgba(238, 238, 238, 1);
+}
+.loginContainer .loginContent .loginFooter > * {
+  text-align: center;
+}
+.loginContainer .loginContent .loginFooter h5 {
+  color: var(--purple);
+}
+.loginContainer .loginContent .loginFooter h5:hover {
+  color: var(--black);
+}
+#signupLink {
+  text-decoration: none;
+  color: var(--black);
+}
+#signupLink:hover {
+  color: var(--bubbleGumPink);
+}
+#signLink:active {
+  color: var(--purple);
+}
