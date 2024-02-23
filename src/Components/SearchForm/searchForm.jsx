@@ -4,7 +4,7 @@ import style from "../../ComponentStyles/SearchFormStyle/searchFormStyle.module.
 
 const SearchForm = () => {
   const [searchValue, setSearchValue] = useState("");
-
+  
   const getSearchValue = (e) => {
     setSearchValue(e.target.value);
   };
@@ -16,7 +16,7 @@ const SearchForm = () => {
           type="text"
           value={searchValue}
           required
-          placeholder="Search Cocktails..."
+          placeholder="Search Cocktails By Name..."
           onChange={getSearchValue}
           id={style.searchInput}
         />

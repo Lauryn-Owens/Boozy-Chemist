@@ -53,7 +53,15 @@
   font-size: 1.2rem;
   margin-left: 35%;
 }
-
+.noResults{
+  width: 50%;
+  margin:auto;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 250;
+  font-size: 1.2rem;
+  }
+  
 @media (max-width: 663px) {
   .drinkContainer {
     grid-template-columns: repeat(2, minmax(200px, 490px));

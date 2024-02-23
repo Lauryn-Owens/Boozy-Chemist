@@ -4,27 +4,32 @@ import style from "../PagesStyle/ourDrinksPageStyle.module.css";
 
 const OurDrinksPage = ({ searchValue }) => {
   const [cocktailList, setCocktailList] = useState([]);
-
+  const [displayShowMoreBtn, setDisplayShowMoreBtn] = useState(true);
   const cocktailsPerLoad = 35;
   const [nextLoad, setNextLoad] = useState(cocktailsPerLoad);
+
   const loadMoreProducts = () => {
     setNextLoad(nextLoad + 35);
   };
-  //run getDrinkDetails function when the page loads-only runs on the first render
-  //the  getDrinkDetails function gather the data from the api
+
   useEffect(() => {
     getDrinkDetails();
   }, []);
 
-  //use async/await to fetch this data
+  useEffect(() => {
+    if (cocktailList.length === 0) return; // Exit if the cocktailList is empty
+    // Check if the searchValue is empty or if any drink matches the searchValue
+    const hasMatch = cocktailList.some((currFilterDrink) =>
+      currFilterDrink.strDrink.includes(searchValue)
+    );
+    setDisplayShowMoreBtn(hasMatch); // Update the displayShowMoreBtn state based on the search result
+  }, [cocktailList, searchValue]);
+
   const getDrinkDetails = async () => {
     try {
-      /*returns one object with a property drinks that value is an array of objects */
-
       const response = await fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
       );
-      //store the data into our data variable
       const data = await response.json();
       const { drinks } = data;
       setCocktailList(drinks);
@@ -38,33 +43,38 @@ const OurDrinksPage = ({ searchValue }) => {
       <RandomCocktail />
       <h1 className={style.ourDrinksTitle}>Our Cocktails</h1>
       <section className={style.drinkContainer}>
-        {
-          cocktailList
+        {cocktailList
           .filter((currFilterDrink) => {
             if (searchValue === "") {
-              return currFilterDrink;
-            } else if (currFilterDrink.strDrink.includes(searchValue)) {
-              return currFilterDrink;
+              return true; // Return true for all drinks if searchValue is empty
             }
+            return currFilterDrink.strDrink.includes(searchValue); // Filter based on searchValue
           })
           .slice(0, nextLoad)
-          .map((currDrink,idx) => {
-            return (
-                <article key={idx} className={style.cocktailCard} key={currDrink.idDrink}>
-                  <img
-                    className={style.cocktailImage}
-                    src={currDrink.strDrinkThumb}
-                    alt="Cocktail"
-                  />
-                  <h1>{currDrink.strDrink}</h1>
-                </article>
-            );
-          })}
+          .map((currDrink, idx) => (
+            <article
+              key={idx}
+              className={style.cocktailCard}
+              key={currDrink.idDrink}
+            >
+              <img
+                className={style.cocktailImage}
+                src={currDrink.strDrinkThumb}
+                alt="Cocktail"
+              />
+              <h1>{currDrink.strDrink}</h1>
+            </article>
+          ))}
       </section>
-          <button onClick={loadMoreProducts} className={style.loadMoreButton}>
-            Load More Cocktails
-          </button>
+      {displayShowMoreBtn ? (
+        <button onClick={loadMoreProducts} className={style.loadMoreButton}>
+          Load More Cocktails
+        </button>
+      ) : (
+        <p className={style.noResults}>No Results Found</p>
+      )}
     </>
   );
 };
+
 export default OurDrinksPage;
