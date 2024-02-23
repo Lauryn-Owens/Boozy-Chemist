@@ -10,8 +10,22 @@
   top: 40%;
   left: 10%;
 }
-img {
+.modalContainer .cocktailName{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.modalContainer .cocktailImg {
   display: block;
-  width: 100%;
-  height: 10rem;
+  width: 75%;
+  height: 20rem;
+  margin:auto;
+  margin-bottom: 1.5rem;
+  border-radius: 0.8rem;
+}
+.modalContainer .ingredients{
+  margin-bottom: 5rem;
+}
+.modalContainer .ingredients, .modalContainer .instructions{
+  width:85%;
+  margin:auto;
 }

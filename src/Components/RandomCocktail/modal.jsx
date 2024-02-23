@@ -43,22 +43,28 @@ const Modal = ({ modalOpen, closeModal }) => {
           );
           return (
             <>
-              <h1>{cocktail.strDrink}</h1>
-              <img src={cocktail.strDrinkThumb} alt="Current Cocktail." />
-              <h1>Ingredients</h1>
-              <ul id="ingredients__list">
+              <h1
+              className={style.cocktailName}
+              >{cocktail.strDrink}</h1>
+              <img 
+              className={style.cocktailImg}
+              src={cocktail.strDrinkThumb} alt="Current Cocktail." />
+              <h1  className={style.ingredients}>Ingredients</h1>
+              <ul className={style.ingredients}
+               style={{marginTop:'1rem'}}
+               id="ingredients__list">
                 {cocktailIngredients.map((currIngredient, idx) => (
                   <li key={idx} style={{ listStyleType: "decimal" }}>
                     {currIngredient[1]}
                   </li>
                 ))}
               </ul>
-              <h1>Instructions</h1>
+              <h1 className={style.instructions}>Instructions</h1>
               <ul id="instructions__list">
                 {cocktailInstructions.map((currStep, idx) => {
                   if (currStep.length) {
                     return (
-                      <li key={idx} style={{ listStyleType: "decimal" }}>
+                      <li   className={style.ingredients} key={idx} style={{ listStyleType: "decimal" }}>
                         {currStep}.
                       </li>
                     );
