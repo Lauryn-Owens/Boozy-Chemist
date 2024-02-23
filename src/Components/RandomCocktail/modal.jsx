@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import style from "../../ComponentStyles/RandomCocktailStyle/modalStyle.module.css";
 
 const Modal = ({ modalOpen, closeModal }) => {
