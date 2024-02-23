@@ -37,8 +37,9 @@ const OurDrinksPage = ({ searchValue }) => {
     <>
       <RandomCocktail />
       <h1 className={style.ourDrinksTitle}>Our Cocktails</h1>
-      <div className={style.drinkContainer}>
-        {cocktailList
+      <section className={style.drinkContainer}>
+        {
+          cocktailList
           .filter((currFilterDrink) => {
             if (searchValue === "") {
               return currFilterDrink;
@@ -47,24 +48,22 @@ const OurDrinksPage = ({ searchValue }) => {
             }
           })
           .slice(0, nextLoad)
-          .map((currDrink) => {
+          .map((currDrink,idx) => {
             return (
-              <>
-                <article className={style.cocktailCard} key={currDrink.idDrink}>
-                  <h1>{currDrink.strDrink}</h1>
+                <article key={idx} className={style.cocktailCard} key={currDrink.idDrink}>
                   <img
                     className={style.cocktailImage}
                     src={currDrink.strDrinkThumb}
                     alt="Cocktail"
                   />
+                  <h1>{currDrink.strDrink}</h1>
                 </article>
-              </>
             );
           })}
-      </div>
-      <button onClick={loadMoreProducts} className={style.loadMoreButton}>
-        Load More Cocktails
-      </button>
+      </section>
+          <button onClick={loadMoreProducts} className={style.loadMoreButton}>
+            Load More Cocktails
+          </button>
     </>
   );
 };

@@ -27,7 +27,7 @@ const Modal = ({ modalOpen, closeModal }) => {
   }
 
   return ReactDom.createPortal(
-    <div className={style.modalContainer}>
+    <div  className={style.modalContainer}>
       <button onClick={closeModal}>&#10005;</button>
       {randomCocktail
         .filter((currCocktail) => {
@@ -61,11 +61,11 @@ const Modal = ({ modalOpen, closeModal }) => {
               </ul>
               <h1>Instructions</h1>
               <ul id="instructions__list">
-                {cocktailInstructions.map((currStep) => {
+                {cocktailInstructions.map((currStep, idx) => {
                   //if step is not empty
                   if (currStep.length) {
                     return (
-                      <li style={{ listStyleType: "decimal" }}>{currStep}.</li>
+                      <li key={idx} style={{ listStyleType: "decimal" }}>{currStep}.</li>
                     );
                   }
                 })}
