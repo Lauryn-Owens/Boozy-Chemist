@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../Context/Cart/CartContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import style from "../PagesStyle/checkOutPageStyle.module.css";
-import CheckOutConfirmation from "./checkOutConfirmation";
 
 const CheckOutPage = () => {
   const GlobalState = useContext(CartContext);
