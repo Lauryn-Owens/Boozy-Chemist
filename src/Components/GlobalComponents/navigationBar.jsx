@@ -6,7 +6,6 @@ import CartQuantity from "../CartQuantity/cartQuantity";
 
 const NavigationBar = () => {
   return (
-    <>
       <header className={style.navigationHeader}>
         <label className={style.toggleMenuLabel} htmlFor={style.toggleMenu}>
           <div className={style.hamburgerIconContainer}>
@@ -48,7 +47,6 @@ const NavigationBar = () => {
           </ul>
         </nav>
       </header>
-    </>
   );
 };
 

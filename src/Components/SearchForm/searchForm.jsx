@@ -4,9 +4,11 @@ import style from "../../ComponentStyles/SearchFormStyle/searchFormStyle.module.
 
 const SearchForm = () => {
   const [searchValue, setSearchValue] = useState("");
-  function getSearchValue(e) {
+
+  const getSearchValue = (e) => {
     setSearchValue(e.target.value);
-  }
+  };
+
   return (
     <>
       <form id={style.searchCocktails}>
@@ -23,4 +25,5 @@ const SearchForm = () => {
     </>
   );
 };
+
 export default SearchForm;
