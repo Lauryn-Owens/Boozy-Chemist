@@ -51,9 +51,9 @@ const Modal = ({ modalOpen, closeModal }) => {
               <img src={cocktail.strDrinkThumb} alt="Current Cocktail." />
               <h1>Ingredients</h1>
               <ul id="ingredients__list">
-                {cocktailIngredients.map((currIngredient) => {
+                {cocktailIngredients.map((currIngredient,idx) => {
                   return (
-                    <li style={{ listStyleType: "decimal" }}>
+                    <li key={idx}style={{ listStyleType: "decimal" }}>
                       {currIngredient[1]}
                     </li>
                   );

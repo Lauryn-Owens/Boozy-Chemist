@@ -11,13 +11,12 @@ const ShoppingCartPage = () => {
   const sumItems = state.reduce((total, item) => {
     return total + item.classPrice * item.quantity;
   }, 0);
-  let sum = sumItems;
+  
   return (
     <div className={style.shoppingCartPageContainer}>
       <h1 id={style.shoppingCartTitle}>Shopping Cart</h1>
       {state.map((item, index) => {
         return (
-          <>
             <div key={index} className={style.classDetailsContainer}>
               <section className={style.classImageSection}>
                 <img src={item.image} alt="Drink" />
@@ -61,7 +60,6 @@ const ShoppingCartPage = () => {
                 </section>
               </div>
             </div>
-          </>
         );
       })}
       {state.length > 0 && (
