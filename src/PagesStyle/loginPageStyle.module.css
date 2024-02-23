@@ -11,11 +11,15 @@
 }
 .loginContainer .loginContent .loginHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content:right;
   border-bottom: 0.2rem solid rgba(238, 238, 238, 1);
 }
-.loginContainer .loginContent .loginHeader h3 {
+.loginContainer .loginContent .loginHeader h4 {
   color: var(--purple);
+  margin-right:1rem;
+}
+.loginContainer .loginContent .loginHeader h4:hover {
+  color: var(--bubbleGumPink);
 }
 .loginContainer .loginContent form {
   display: flex;
@@ -27,9 +31,11 @@
 .loginContainer .loginContent form input {
   width: 55%;
   padding: 4px 0;
+  outline: none;
 }
 .loginContainer .loginContent form input:hover {
-  border: 0.2rem solid var(--bubbleGumPink);
+  border: 0.2rem solid var(--purple);
+  outline: none;
 }
 .loginContainer .loginContent form button {
   font-weight: bolder;

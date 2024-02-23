@@ -27,8 +27,7 @@ const LoginPage = () => {
         <div className={style.loginContainer}>
             <main className={style.loginContent}>
                 <section className={style.loginHeader}>
-                    <h3>Already Members</h3>
-                    <h4>Need Help?</h4>
+                    <h4>Need Help ?</h4>
                 </section>
                 <form onSubmit={onSubmit} className={style.loginInformationForm}>
                     <input

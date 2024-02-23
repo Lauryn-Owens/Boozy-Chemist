@@ -60,25 +60,31 @@ const CheckOutPage = () => {
         {state.length === 0 && <h1>Total Cost: $0</h1>}
         <section className={style.totalCostDetails}>
           <table>
-            <tr>
-              <th>Class Name</th>
-              <th>Class Price</th>
-            </tr>
-            {state.map((currCartItem) => {
-              return (
-                <>
+            <thead>
+              <tr>
+                <th>Class Name</th>
+                <th>Class Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {state.map((currCartItem) => {
+                return (
                   <tr key={currCartItem.id}>
                     <td>{currCartItem.classTitle}</td>
                     <td>
-                      <span>{currCartItem.quantity}&#215;</span>
+                      <span>{currCartItem.quantity}
+                      &nbsp;
+                      &#215;</span>
+                      &nbsp;
                       <span className={style.currCartItemPrice}>
-                        ${currCartItem.classPrice}
+                      &nbsp;
+                        $ {currCartItem.classPrice}
                       </span>
                     </td>
                   </tr>
-                </>
-              );
-            })}
+                );
+              })}
+            </tbody>
           </table>
           <hr />
           {state.length > 0 && <h1>Total Cost: ${fullTotal}</h1>}
@@ -91,12 +97,11 @@ const CheckOutPage = () => {
                 <i className="fa fa-user"></i> Full Name
               </label>
               <input
-                required
-                type="text"
-                placeholder="Savannah Smith"
-                id={style.fullName}
-                name="fullname"
-              />
+              required
+              type="text"
+              id={style.fullName}
+              name="fullName"
+            />
               <label htmlFor="email">
                 <i className="fa fa-envelope"></i> Email
               </label>
@@ -115,14 +120,12 @@ const CheckOutPage = () => {
                 type="text"
                 id={style.state}
                 name="state"
-                placeholder="NY"
               />
               <label htmlFor="zipCode">Zip Code</label>
               <input
                 type="text"
                 id={style.zipCode}
                 name="zipcode"
-                placeholder="10121"
               />
             </section>
             <section className={style.billingInformation}>
@@ -150,7 +153,6 @@ const CheckOutPage = () => {
                 type="text"
                 id={style.expyear}
                 name="expyear"
-                placeholder="2022"
               />
               <label htmlFor="cvv">CVV</label>
               <input required type="text" id={style.cvv} name="cvv" />
