@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import React, {useContext } from "react";
+import { Link} from "react-router-dom";
 import { CartContext } from "../Context/Cart/CartContext";
 import { ClassesData } from "../ApplicationData/ClassesData";
 import style from "../PagesStyle/ourClassesPageSyle.module.css";
@@ -8,12 +8,11 @@ import ClassComponent from "../Components/ClassComponent/ClassComponent";
 const OurClassesPage = () => {
   const GlobalState = useContext(CartContext);
   const dispatch = GlobalState.dispatch;
-  const state = GlobalState.state;
 
   return (
     <div className={style.ourClassesPageContainer}>
       <ClassComponent />
-      {ClassesData.map((classProduct, index) => {
+      {ClassesData.map((classProduct) => {
         classProduct.quantity = 1;
         return (
           <div key={classProduct.id} className={style.classProductCard}>

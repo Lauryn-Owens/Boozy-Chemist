@@ -17,8 +17,7 @@
 #classInformationContainer h1::after{
     content:"";
     display:block;
-    margin:0 auto;
-    width:90%;
+    width:95%;
     padding-top: 10px;
     border-bottom: 1px solid var(--purple);
 }

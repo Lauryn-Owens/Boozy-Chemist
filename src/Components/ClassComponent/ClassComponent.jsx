@@ -5,7 +5,6 @@ const ClassComponent = () => {
   return (
     <div id={style.classInformationContainer}>
       <h1>All Classes Include the Following</h1>
-
       <p>
         Every class is exclusive, customizable, and consists of a variety of spirits and themes.
       </p>
