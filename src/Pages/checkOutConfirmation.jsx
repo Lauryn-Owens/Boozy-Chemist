@@ -1,6 +1,7 @@
 import React  from "react";
 import{Link} from 'react-router-dom';
 import style from '../PagesStyle/checkOutConfirmationStyle.module.css';
+
 const CheckOutConfirmation = () => {
     function generateRandomNumber(){
         let randomNumber;

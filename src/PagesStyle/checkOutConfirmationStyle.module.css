@@ -9,6 +9,6 @@ main{
     text-decoration: none;
     color:var(--lightPink);
 }
-#continueShoppingLink:hover{
-    color:var(--purple);
+#continueShoppingButton:hover{
+    background-color:var(--bubbleGumPink);
 }
