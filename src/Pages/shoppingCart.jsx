@@ -15,6 +15,11 @@ const ShoppingCartPage = () => {
   return (
     <div className={style.shoppingCartPageContainer}>
       <h1 id={style.shoppingCartTitle}>Shopping Cart</h1>
+      {
+        !state.length ? 
+        <p className={style.cartEmpty}>Cart is Empty</p> : 
+        null
+      }
       {state.map((item, index) => {
         return (
             <div key={index} className={style.classDetailsContainer}>
@@ -72,11 +77,16 @@ const ShoppingCartPage = () => {
           </button>
           <div className="total">
             <h2>Total: ${sumItems}</h2>
-            <button id={style.checkOutButton}>
+            {
+              state.length ?
+              <button id={style.checkOutButton}>
               <Link id={style.checkOutLink} to="/checkout" state={sumItems}>
                 Continue To Check Out
               </Link>
-            </button>
+            </button> :
+            null
+            }
+           
           </div>
         </>
       )}

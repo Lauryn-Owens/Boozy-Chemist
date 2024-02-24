@@ -1,4 +1,4 @@
-import Style from "../../ComponentStyles/filterSortStyle/filterSortStyle.module.css";
+import Style from "../../ComponentStyles/SortStyle/sortStyle.module.css";
 
 const Sort = ({onChangeSortOptionHandler}) => {
 

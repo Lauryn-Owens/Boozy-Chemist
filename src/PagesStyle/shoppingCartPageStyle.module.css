@@ -34,6 +34,10 @@ img{
     padding-top: 20px;
     border-bottom: 1px solid var(--bubbleGumPink);
 }
+.cartEmpty{
+    margin:auto;
+    font-size: 1.5rem;
+}
 .classDetailsContainer .classImageSection{
     width:45%;
 }

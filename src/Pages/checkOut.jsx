@@ -98,6 +98,7 @@ const CheckOutPage = () => {
               </label>
               <input
               required
+              value="Isabelle Smith"
               type="text"
               id={style.fullName}
               name="fullName"
@@ -105,24 +106,33 @@ const CheckOutPage = () => {
               <label htmlFor="email">
                 <i className="fa fa-envelope"></i> Email
               </label>
-              <input required type="email" id={style.email} name="email" />
+              <input required
+               value="boozychemist@gmail.com"
+               type="email" id={style.email} name="email" />
               <label htmlFor="adr">
                 <i className="fa fa-address-card-o"></i> Address
               </label>
-              <input required type="text" id={style.address} name="address" />
+              <input required
+               value="123 Main Street Apt.2G"
+               type="text" id={style.address} name="address" />
               <label htmlFor="city">
                 <i className="fa fa-institution"></i> City
               </label>
-              <input required type="text" id={style.city} name="city" />
+              <input required 
+               value="Brooklyn"
+              type="text" id={style.city} name="city" />
               <label htmlFor="state">State</label>
               <input
                 required
+                value="NY"
                 type="text"
                 id={style.state}
                 name="state"
               />
               <label htmlFor="zipCode">Zip Code</label>
               <input
+                required
+                value="10036"
                 type="text"
                 id={style.zipCode}
                 name="zipcode"
@@ -139,9 +149,14 @@ const CheckOutPage = () => {
                 <i className="fa fa-cc-discover" style={{ color: "green" }}></i>
               </div>
               <label htmlFor="nameOnCArd">Name on Card</label>
-              <input type="text" id={style.nameOnCard} name="cardname" />
+              <input
+               required
+               value="Isabelle Smith"
+               type="text" id={style.nameOnCard} name="cardname" />
               <label htmlFor="creditCardNumber">Credit card number</label>
               <input
+                required
+                value="1234 5678 9012 3456"
                 type="text"
                 id={style.creditCardNumber}
                 name="cardnumber"
@@ -150,12 +165,15 @@ const CheckOutPage = () => {
               <label htmlFor="expyear">Exp Year</label>
               <input
                 required
+                value="05/28"
                 type="text"
                 id={style.expyear}
                 name="expyear"
               />
               <label htmlFor="cvv">CVV</label>
-              <input required type="text" id={style.cvv} name="cvv" />
+              <input required
+               value="082"
+               type="text" id={style.cvv} name="cvv" />
             </section>
             <input type="submit" value="Submit" name="submit" />
           </form>
