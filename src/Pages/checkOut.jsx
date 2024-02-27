@@ -13,7 +13,7 @@ const CheckOutPage = () => {
   return (
     <main className={style.checkout}>
       {guestCheckOut ? (
-        <CheckOut />
+        <CheckOut guestCheckOut={guestCheckOut} />
       ) : loggedIn ? (
         <CheckOut />
       ) : (

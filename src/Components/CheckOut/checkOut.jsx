@@ -3,7 +3,9 @@ import { CartContext } from "../../Context/Cart/CartContext";
 import { useNavigate,useLocation} from "react-router-dom";
 import style from "../../ComponentStyles/CheckOutStyle/checkOutStyle.module.css";
 
-const CheckOut = () => {
+const CheckOut = ({guestCheckOut}) => {
+  const[billingAddress, setBillingAddress] = useState(false);
+
   const GlobalState = useContext(CartContext);
   const state = GlobalState.state;
 
@@ -47,7 +49,6 @@ const CheckOut = () => {
   const getCheckOutConfirmation = (e) => {
     e.preventDefault();
     navigate("/checkOutConfirmation");
-    console.log('click')
     /*if this project was connected to a database, the formData 
     state object would be pushed/sent to the database
     for now the data is just logged
@@ -96,17 +97,16 @@ const CheckOut = () => {
         <section className={style.checkOutDetails}>
           <form onSubmit={(e) => {
             e.preventDefault();
-            console.log(1);
             getCheckOutConfirmation(e);
             }}>
             <section className={style.generalCustomerInformation}>
-              <h3>Billing Address</h3>
+              <h3>Shipping Information</h3>
               <label htmlFor="fullName">
                 <i className="fa fa-user"></i> Full Name
               </label>
               <input
               required
-              value="Isabelle Smith"
+              value={guestCheckOut ? 'Guest Johnson': 'Isabelle Smith'}
               type="text"
               id={style.fullName}
               name="fullName"
@@ -116,14 +116,14 @@ const CheckOut = () => {
                 <i className="fa fa-envelope"></i> Email
               </label>
               <input required
-               value="boozychemist@gmail.com"
+              value={guestCheckOut ? 'guestcheckout@gmail.com': 'boozychemist@gmail.com'}
                type="email" id={style.email} name="email"
                onChange={onChangeHandler} />
               <label htmlFor="adr">
                 <i className="fa fa-address-card-o"></i> Address
               </label>
               <input required
-               value="123 Main Street Apt.2G"
+               value={guestCheckOut ? '145 Guest Street Ground Level': '123 Main Street Apt.2G'}
                type="text" id={style.address} name="address"
                onChange={onChangeHandler} />
               <label htmlFor="city">
@@ -195,7 +195,76 @@ const CheckOut = () => {
                onChange={onChangeHandler}
                />
             </section>
-            <input type="submit" value="Submit" name="submit" />
+              {
+                !billingAddress && (
+                  <section className={style.billingAddressInformation}>
+                  <h3>Billing Address</h3>
+              <label htmlFor="fullName">
+                <i className="fa fa-user"></i> Full Name
+              </label>
+              <input
+              required
+              value={guestCheckOut ? 'Guest Johnson': 'Isabelle Smith'}
+              type="text"
+              id={style.fullName}
+              name="fullName"
+              onChange={onChangeHandler}
+            />
+              <label htmlFor="email">
+                <i className="fa fa-envelope"></i> Email
+              </label>
+              <input required
+              value={guestCheckOut ? 'guestcheckout@gmail.com': 'boozychemist@gmail.com'}
+               type="email" id={style.email} name="email"
+               onChange={onChangeHandler} />
+              <label htmlFor="adr">
+                <i className="fa fa-address-card-o"></i> Address
+              </label>
+              <input required
+               value={guestCheckOut ? '145 Guest Street Ground Level': '123 Main Street Apt.2G'}
+               type="text" id={style.address} name="address"
+               onChange={onChangeHandler} />
+              <label htmlFor="city">
+                <i className="fa fa-institution"></i> City
+              </label>
+              <input required 
+               value="Brooklyn"
+              type="text" id={style.city} name="city"
+              onChange={onChangeHandler} />
+              <label htmlFor="state">State</label>
+              <input
+                required
+                value="NY"
+                type="text"
+                id={style.state}
+                name="state"
+                onChange={onChangeHandler}
+              />
+              <label htmlFor="zipCode">Zip Code</label>
+              <input
+                required
+                value="10036"
+                type="text"
+                id={style.zipCode}
+                name="zipcode"
+                onChange={onChangeHandler}
+              />
+              </section>
+                ) 
+              }
+              <section className={style.billingAddress}>
+              <input required type="checkbox"
+             name="billingAddress"
+             id="billingAddress"
+             checked={billingAddress}
+             onChange={() => {
+              setBillingAddress(!billingAddress);
+            }}
+             />
+            <label htmlFor="billingAddress">The billing address is the same as the shipping address</label>
+              </section>
+            <input type="submit"  value="Submit" name="submit" 
+            />
           </form>
         </section>
       </div>

@@ -1,5 +1,4 @@
 import style from "../../../ComponentStyles/CheckOutStyle/checkOutOption/guestCheckOutOptionStyle.module.css";
-import CheckOut from "../checkOut";
 
 const GuestCheckoutOption = ({setGuestCheckout}) => {
     return (
