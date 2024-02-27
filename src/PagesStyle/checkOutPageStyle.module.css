@@ -1,67 +1,42 @@
-body {
-  overflow-y: scroll;
+.checkout{
+    width:90%;
+    min-height: max-content;
+    margin:auto;
+    margin-top:15%;
+    display:flex;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0.3rem;
 }
-.totalCostDetails {
-  border: 2px solid var(--bubbleGumPink);
+.checkout > *{
+    width:100%;
 }
-.totalCostDetails ol li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+.memberCheckout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid var(--bubbleGumPink);
 }
-hr {
-  color: var(--purple);
-}
-table {
-  width: 100%;
-}
-table,
-td,
-th {
-  border: 2px solid var(--purple);
-  border-collapse: collapse;
-}
-th {
-  padding: 1rem;
-}
-td,
-tr {
-  padding: 2rem;
-}
-.generalCustomerInformation,
-.billingInformation {
-  display: flex;
-  flex-direction: column;
-  width: 85%;
-  margin: auto;
-  gap: 0.4rem;
-}
-.generalCustomerInformation input,
-.billingInformation input {
-  padding: 0.4rem 0;
-}
-.generalCustomerInformation input:hover,
-.billingInformation input:hover {
-  border: 0.18rem solid var(--purple);
-}
-.iconContainer > * {
-  margin-left: 1rem;
-}
-input[type="submit"] {
-  display: block;
-  margin: auto;
-  margin-top: 1rem;
-  padding: 10px 5px;
-  width: 10rem;
-  background-color: var(--purple);
-  color: var(--lightPink);
-  border: none;
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 3px;
-  margin-bottom: 2rem;
-}
-input[type="submit"]:hover {
-  background-color: var(--lightPink);
-  color: var(--purple);
-}
+.memberCheckoutLink {
+    text-decoration: none; 
+  }
+  
+  .memberCheckoutLink:hover {
+    text-decoration:underline;
+    text-decoration-color: var(--bubbleGumPink);
+  }
+  
+@media (max-width: 663px) {
+    .checkout{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .memberCheckout{
+        border-right:none;
+        border-bottom: 2px solid var(--bubbleGumPink);
+    }
+    .checkout > *{
+        min-height: 20rem;
+    }
+  }
+  
+  

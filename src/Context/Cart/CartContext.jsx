@@ -1,4 +1,4 @@
-import { useReducer, createContext } from 'react';
+import { useReducer, createContext, useState } from 'react';
 
 export const CartContext = createContext();
 
@@ -37,9 +37,10 @@ export const Context = (props) => {
     };
 
     const [state, dispatch] = useReducer(reducer, []);
+    const[loggedIn, setLoggedIn] = useState(false);
 
     return (
-        <CartContext.Provider value={{ state, dispatch }}>
+        <CartContext.Provider value={{ state, dispatch, loggedIn, setLoggedIn}}>
             {props.children}
         </CartContext.Provider>
     );

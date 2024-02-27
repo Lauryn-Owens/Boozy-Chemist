@@ -1,0 +1,26 @@
+.guestCheckout{
+    min-height:20rem;
+    text-align: center;
+}
+.guestCheckout > *{
+    padding:1rem;
+}
+.guestCheckoutHeader{
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+.guestCheckoutText{
+    line-height: 1.5rem;
+}
+.guestCheckoutBtn{
+    display: inline-block;
+    width:80%;
+    height:3rem;
+    margin-bottom:2rem;
+    color:var(--bubbleGumPink);
+    font-weight:bold;
+    letter-spacing: 0.1rem;
+}
+.guestCheckoutHeader, .guestCheckoutText, .guestCheckoutBtn{
+    margin-left:0.5rem;
+}

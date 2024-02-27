@@ -33,3 +33,6 @@ body {
  absolute  to it so it stays at the bottom of it*/
   min-height: 100vh;
 }
+button{
+  text-transform: uppercase;
+}

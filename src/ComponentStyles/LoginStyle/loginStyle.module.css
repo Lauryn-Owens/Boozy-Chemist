@@ -2,6 +2,7 @@
   margin-top: 2rem;
 }
 .loginContent {
+  margin-top: 2rem;
   border: 2px solid var(--purple);
   width: 75%;
   margin: auto;
@@ -41,7 +42,7 @@
   font-weight: bolder;
   width: 45%;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 0.rem;
 }
 .loginContainer .loginContent form button:hover {
   background-color: var(--bubbleGumPink);

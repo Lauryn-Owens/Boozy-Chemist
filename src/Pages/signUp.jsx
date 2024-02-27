@@ -69,7 +69,7 @@ const SignUp = () => {
         </form>
         <section className={style.signUpFooter}>
           <h5>
-            <Link to="/loginIn" id={style.loginLink}>
+            <Link to="/login" id={style.loginLink}>
               Login
             </Link>
           </h5>

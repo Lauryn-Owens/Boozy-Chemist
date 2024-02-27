@@ -29,7 +29,7 @@ const ApplicationRoutes = () => {
           element={<FrequencyAskedQuestionsPage />}
         />
         <Route exact path="/shoppingCart" element={<ShoppingCart />} />
-        <Route exact path="/loginIn" element={<LoginPage />} />
+        <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/checkout" element={<CheckOutPage />} />
         <Route

@@ -39,7 +39,7 @@ const NavigationBar = () => {
             </li>
             <li>
               <button id={style.loginButton}>
-                <Link className={style.loginButtonLink} to="/loginIn">
+                <Link className={style.loginButtonLink} to="/login">
                   Log in
                 </Link>
               </button>

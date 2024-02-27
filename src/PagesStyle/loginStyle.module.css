@@ -1,0 +1,17 @@
+.loggedIn{
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.loggedIn .loggedInBtn{
+    min-height: max-content;
+    padding:1rem;
+    color:var(--bubbleGumPink);
+    letter-spacing: 0.3rem;
+}
+.loggedIn .loggedInBtn .loggedInLink{
+    color:var(--bubbleGumPink);
+}

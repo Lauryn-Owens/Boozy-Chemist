@@ -17,7 +17,7 @@ const CheckOutConfirmation = () => {
             <h1>Thank You For Your Purchase!</h1>
             <p>Your order number is:  #{generateRandomNumber()}.</p>
              <p> We'll email you an order confirmation with 
-            details and tracking information</p>
+            details and tracking information.</p>
             <button id={style.continueShoppingButton}>
                 <Link id={style.continueShoppingLink} to="/ourClasses">
                     Continue Shopping

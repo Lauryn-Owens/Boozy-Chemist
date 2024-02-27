@@ -1,64 +1,54 @@
-import React, { useState } from "react";
-import style from "../PagesStyle/loginPageStyle.module.css";
-import { Link } from "react-router-dom";
+import React, {useContext}  from "react";
+import {Link} from "react-router-dom";
+import { CartContext } from "../Context/Cart/CartContext";
+import style from "../PagesStyle/loginStyle.module.css";
+import Login from "../Components/Login/login";
 
 const LoginPage = () => {
-    const [formData, setFormData] = useState({
-        username: "",
-        password: ""
-    });
-
-    const onChangeHandler = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        // Here you can handle the form submission, like sending the formData to a server
-        // For now it logs the form data
-        console.log(formData);
-    };
+     const {loggedIn, setLoggedIn, state} = useContext(CartContext);
+     const totalQuantity = () => {
+          return state.reduce((total, item) => total + item.quantity, 0);
+      };
+  
+      const total = totalQuantity();
 
     return (
-        <div className={style.loginContainer}>
-            <main className={style.loginContent}>
-                <section className={style.loginHeader}>
-                    <h4>Need Help ?</h4>
-                </section>
-                <form onSubmit={onSubmit} className={style.loginInformationForm}>
-                    <input
-                        name="username"
-                        value={formData.username}
-                        onChange={onChangeHandler}
-                        required
-                        type="text"
-                        placeholder="Username"
-                    />
-                    <input
-                        name="password"
-                        value={formData.password}
-                        onChange={onChangeHandler}
-                        required
-                        type="password"
-                        placeholder="Password"
-                    />
-                    <button type="submit">Log In</button>
-                </form>
-                <section className={style.loginFooter}>
-                    <h3>Don't have an account yet?</h3>
-                    <h5>
-                        <Link to="/signup" id={style.signupLink}>
-                            Create an account
-                        </Link>
-                    </h5>
-                </section>
-            </main>
-        </div>
-    );
+           <main>
+               {
+                    loggedIn ?
+                     (
+                         <section className={style.loggedIn}>
+                         <button
+                         style={{backgroundColor: total === 0 ? '#ededed' : 'inital'}}
+                         className={style.loggedInBtn}
+                         >
+                         <Link to={total === 0 ? '' : '/checkout'}
+                         className={style.loggedInLink}
+                         >
+                          {total === 0 ? 'Your Cart is empty!!! Lets go shopping!!!' : 'Checkout'}
+                         </Link>
+                         </button>
+                         <button
+                         className={style.loggedInBtn}
+                         >
+                              <Link to="/ourClasses"
+                              className={style.loggedInLink}
+                              >
+                                   CONTINUE SHOPPING
+                              </Link>
+                         </button>
+                         <button 
+                         className={style.loggedInBtn}
+                         onClick={() => {setLoggedIn(false)}}>
+                              LOGOUT
+                         </button>
+                       </section>  
+                     ) :
+                     <Login/>
+               }
+           </main>
+          
+        );
 };
 
 export default LoginPage;
