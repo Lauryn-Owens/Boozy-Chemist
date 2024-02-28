@@ -8,7 +8,7 @@ const Login = () => {
     username: "Isabelle123",
     password: "DummyPassword1234"
   });
-  const{loggedIn, setLoggedIn} = useContext(CartContext);
+  const{setLoggedIn} = useContext(CartContext);
   
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
