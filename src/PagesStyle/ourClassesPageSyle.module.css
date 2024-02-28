@@ -33,7 +33,7 @@ button{
     padding:0.7rem;
     border: none;
 }
-.link:hover,button:hover{
+button:hover{
     background-color:var(--lightPink);
     color:var(--purple);
 }

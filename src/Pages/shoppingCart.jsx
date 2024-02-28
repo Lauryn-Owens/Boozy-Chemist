@@ -73,17 +73,24 @@ const ShoppingCartPage = () => {
             id={style.clearButton}
             onClick={() => dispatch({ type: "CLEAR" })}
           >
-            Clear Cart
+           CLEAR
           </button>
           <div className="total">
             <h2>Total: ${sumItems}</h2>
             {
               state.length ?
-              <button id={style.checkOutButton}>
-              <Link id={style.checkOutLink} to="/checkout" state={sumItems}>
+             (
+              <section>
+              <button 
+              id={style.checkOutButton}>
+                            <Link 
+              id={style.checkOutLink}
+               to="/checkout" state={sumItems}>
                 Continue To Check Out
-              </Link>
-            </button> :
+              </Link>     
+                          </button>
+            </section> 
+             ):
             null
             }
            

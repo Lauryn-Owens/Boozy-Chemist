@@ -68,17 +68,24 @@ img{
 .classDetailsContainer .classEditQuantity .remove:hover,#checkOutButton #checkOutLink:hover{
     color:var(--purple);
     background-color: var(--lightPink);
+   
 }
 #clearButton{
     width:45%;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
    border-radius: 0.2rem;
 }
+#clearButton .clearLink{
+    text-align: center;
+}
  #checkOutButton{
+    max-width:75%;
     text-align: center;
     margin-left: 1rem;
     border-radius: 0.2rem;
-    width:55%;
 }
 #checkOutButton #checkOutLink{
     text-decoration: none;
