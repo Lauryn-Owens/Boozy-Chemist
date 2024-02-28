@@ -1,11 +1,12 @@
 import React from 'react';
+import{Link} from "react-router-dom";
+import GrandOpening from '../Components/GrandOpening/grandOpening';
 import style from '../PagesStyle/homePageStyle.module.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import OurClassesPage from './ourClasses';
 
 const HomePage = () => {
     return ( 
         <div id={style.homePageBodyContainer}>
+            <GrandOpening/>
             <section id={style.homePageContent}>
                 <h1>Brilliantly Boozy</h1>
                 <p>We're on a mission to take the stress<br/>out of life one boozy class at a time.</p>
@@ -15,9 +16,7 @@ const HomePage = () => {
                     </Link>
                     <div id={style.shadowsButton}></div>
                 </section>
-                <Routes>
-                    <Route exact path="/ourClasses" element={<OurClassesPage/>}/>
-                </Routes>
+                
             </section> 
         </div> 
     );
