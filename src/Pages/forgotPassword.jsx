@@ -16,9 +16,11 @@ const ForgotPassword = () => {
                      className={style.emailSubmit} type="submit" value="Reset Password" id="resetPassword" name="resetPassword"/>
                 </form>
                 <Link
+                to="/login"
                 className={style.forgotPasswordLink}
                 >
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                &nbsp;  &nbsp; 
                 Back to log In</Link>
           </main>
       );
