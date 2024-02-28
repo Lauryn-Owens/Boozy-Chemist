@@ -9,7 +9,7 @@ const OurDrinksPage = ({ searchValue }) => {
   const cocktailsPerLoad = 35;
   const [nextLoad, setNextLoad] = useState(cocktailsPerLoad);
   const [sortOption, setSortOption] = useState("");
-
+  
   const loadMoreProducts = () => {
     setNextLoad(nextLoad + 35);
   };

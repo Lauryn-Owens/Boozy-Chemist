@@ -1,7 +1,13 @@
-.categoryForm .categoryList{
-    border:2px solid red;
-    list-style-type:none;
+.sort{
+    width:85%;
+    margin:auto;
+    text-align: center;
 }
-.categoryForm .categoryList .categoryItem{
-    
+.label {
+    letter-spacing: 0.1rem;
+}
+.selection {
+    border: 2px solid var(--purple);
+    font-size: 1rem;
+    padding: 0.4rem;
 }
