@@ -34,13 +34,20 @@ button{
     border: none;
 }
 button:hover{
-    background-color:var(--lightPink);
+    background-color:var(--bubbleGumPink);
     color:var(--purple);
 }
 .descriptionButton{
     margin-bottom: 1rem;
 }
-.link, button{
+.descriptionButton .link{
+    color:var(--lightPink);
+    text-decoration: none;
+}
+.descriptionButton .link:hover{
+    color:var(--purple);
+}
+button{
     text-decoration: none;
     color:var(--lightPink);
     background-color: var(--purple);
