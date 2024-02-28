@@ -23,7 +23,9 @@ const ForgotPassword = () => {
                      />
                 </form>
                 {
-                    showMessage ? <p>A email was sent!!!</p> : null
+                    showMessage ? <p
+                    style={{color:'var(--bubbleGumPink)', textAlign:'center'}}
+                    >A email was sent!!!</p> : null
                 }
                 <Link
                 to="/login"
