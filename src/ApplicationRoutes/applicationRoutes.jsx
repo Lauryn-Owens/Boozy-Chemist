@@ -14,6 +14,7 @@ import ErrorPage from "../Pages/error";
 import ContactUs from "../Pages/contactUs";
 import CheckOutConfirmation from "../Pages/checkOutConfirmation";
 import SignUp from "../Pages/signUp";
+import ForgotPassword from "../Pages/forgotPassword";
 
 const ApplicationRoutes = () => {
   return (
@@ -38,8 +39,9 @@ const ApplicationRoutes = () => {
           element={<CheckOutConfirmation />}
         />
         <Route exact path="/contactUs" element={<ContactUs />} />
+        <Route exact path="/forgotPassword" element={<ForgotPassword/>}/>
         <Route path="*" element={<ErrorPage />} />
-      </Routes>
+        </Routes>
     </>
   );
 };

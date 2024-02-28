@@ -6,10 +6,13 @@ import Login from "../Components/Login/login";
 
 const LoginPage = () => {
      const {loggedIn, setLoggedIn, state} = useContext(CartContext);
+     
+     //get total quantity of cart items
      const totalQuantity = () => {
           return state.reduce((total, item) => total + item.quantity, 0);
       };
-  
+      
+      //assign quantity to variable
       const total = totalQuantity();
 
     return (

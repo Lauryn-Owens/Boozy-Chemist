@@ -53,15 +53,22 @@
 .loginContainer .loginContent .loginFooter > * {
   text-align: center;
 }
-.loginContainer .loginContent .loginFooter h5 {
+.loginContainer .loginContent .loginFooter .link{
+  display: inline-block;
+  width:100%;
+  margin: center;
   color: var(--purple);
 }
-.loginContainer .loginContent .loginFooter h5:hover {
+#forgotPassword{
+  margin-top: 1rem;
+}
+.loginContainer .loginContent .loginFooter .link:hover {
   color: var(--black);
 }
 #signupLink {
   text-decoration: none;
   color: var(--black);
+  margin-bottom: 1rem;
 }
 #signupLink:hover {
   color: var(--bubbleGumPink);

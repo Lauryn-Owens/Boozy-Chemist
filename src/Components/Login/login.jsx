@@ -53,12 +53,11 @@ const Login = () => {
        <button type="submit">Login</button>
      </form>
      <section className={style.loginFooter}>
+       <Link to="/forgotPassword" className={style.link} id={style.forgotPassword}>Forgot Password?</Link>
        <h3>Don't have an account yet?</h3>
-       <h5>
-         <Link to="/signup" id={style.signupLink}>
+         <Link to="/signup" className={style.link} id={style.signupLink}>
            Create an account
          </Link>
-       </h5>
      </section>
     </main>
    </div>
