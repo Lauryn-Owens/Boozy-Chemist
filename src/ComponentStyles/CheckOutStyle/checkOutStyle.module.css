@@ -36,8 +36,20 @@ td,
 tr {
   padding: 2rem;
 }
+.priceInformation{
+  list-style-type: none;
+}
+.priceInformation .amount{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  left:1rem;
+}
+.priceInformation .hrLine{
+  width:75%;
+}
 .generalCustomerInformation,
-.billingInformation, billingAddressInformation {
+.billingInformation, .billingAddressInformation {
   display: flex;
   flex-direction: column;
   width: 85%;
@@ -45,11 +57,11 @@ tr {
   gap: 0.4rem;
 }
 .generalCustomerInformation input,
-.billingInformation input {
+.billingInformation input, .billingAddressInformation input {
   padding: 0.4rem 0;
 }
 .generalCustomerInformation input:hover,
-.billingInformation input:hover {
+.billingInformation input:hover, .billingAddressInformation input:hover {
   border: 0.18rem solid var(--purple);
 }
 .iconContainer > * {
