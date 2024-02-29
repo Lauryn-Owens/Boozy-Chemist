@@ -65,7 +65,7 @@ img{
     background-color: var(--purple);
     color:var(--lightPink);
 }
-.classDetailsContainer .classEditQuantity .remove:hover,#checkOutButton #checkOutLink:hover{
+.classDetailsContainer .classEditQuantity .remove:hover{
     color:var(--purple);
     background-color: var(--lightPink);
    
