@@ -33,6 +33,7 @@ const LoginPage = () => {
                          </button>
                          <button
                          className={style.loggedInBtn}
+                         id={style.continueShopping}
                          >
                               <Link to="/ourClasses"
                               className={style.loggedInLink}
