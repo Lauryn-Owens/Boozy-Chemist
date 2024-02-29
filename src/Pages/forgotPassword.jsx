@@ -17,7 +17,8 @@ const ForgotPassword = () => {
                     <input 
                     style={{width:'max-content', minHeight:'3rem', padding:'0.5rem 1rem'}}
                      className={style.emailSubmit} type="submit" value="Reset Password" id="resetPassword" name="resetPassword"
-                     onClick={() => {
+                     onClick={(e) => {
+                        e.preventDefault();
                         setShowMessage(true);
                      }}
                      />
