@@ -5,7 +5,7 @@ import style from '../PagesStyle/homePageStyle.module.css';
 
 const HomePage = () => {
     return ( 
-        <div id={style.homePageBodyContainer}>
+        <main id={style.homePageBodyContainer}>
             <GrandOpening/>
             <section id={style.homePageContent}>
                 <h1>Brilliantly Boozy</h1>
@@ -18,7 +18,7 @@ const HomePage = () => {
                 </section>
                 
             </section> 
-        </div> 
+        </main> 
     );
 }
  

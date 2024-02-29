@@ -4,7 +4,7 @@ import { useNavigate,useLocation} from "react-router-dom";
 import style from "../../ComponentStyles/CheckOutStyle/checkOutStyle.module.css";
 
 const CheckOut = ({guestCheckOut}) => {
-  const[billingAddress, setBillingAddress] = useState(false);
+  const[billingAddress, setBillingAddress] = useState(true);
  
   const GlobalState = useContext(CartContext);
   const state = GlobalState.state;

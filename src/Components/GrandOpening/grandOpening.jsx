@@ -8,6 +8,8 @@ const GrandOpening = () => {
         let switchBackgroundColor = setTimeout(() => {
              setBackgroundColor(!backgroundColor);
         }, 1200);
+
+        return () => clearInterval(switchBackgroundColor);
     },[backgroundColor]);
     
     return (   
