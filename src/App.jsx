@@ -1,16 +1,29 @@
+import React, { useState } from "react";
 import NavigationBar from "./Components/GlobalComponents/navigationBar";
-import ApplicationRoutes from "./ApplicationRoutes/applicationRoutes";
+import AgeVerifier from "./Components/AgeVerifier/ageVerifier";
 import Footer from "./Components/GlobalComponents/footer";
+import ApplicationRoutes from "./ApplicationRoutes/applicationRoutes";
 import "./index.css";
 
 function App() {
+  const [pageClickable, setPageClickable] = useState(false);
+
   return (
     <>
-      <div className="App">
-        <NavigationBar />
-        <ApplicationRoutes />
-      </div>
-      <Footer />
+      {pageClickable === false ? (
+        <>
+          <div className="overlay"></div>
+          <AgeVerifier setPageClickable={setPageClickable} pageClickable={pageClickable}/>
+        </>
+      ) : (
+        <>
+          <div className="App">
+            <NavigationBar />
+            <ApplicationRoutes />
+          </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 }

@@ -29,7 +29,7 @@ const Modal = ({ modalOpen, closeModal }) => {
   }
 
   return ReactDOM.createPortal(
-    <div className={style.modalContainer}>
+    <section className={style.modalContainer}>
       <button onClick={closeModal}>&#10005;</button>
       {randomCocktail
         .filter((currCocktail) => currCocktail.strAlcoholic === "Alcoholic")
@@ -74,8 +74,8 @@ const Modal = ({ modalOpen, closeModal }) => {
             </>
           );
         })}
-    </div>,
-    document.getElementById("modal")
+    </section>,
+    document.getElementById("randomCocktailModal")
   );
 };
 

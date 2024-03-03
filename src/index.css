@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 :root{
   --purple:#5E548E;
   --lightPink:#F3EAF3;
   --black:#191919;
   --bubbleGumPink:#FFB6C1;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 *{
   box-sizing: border-box;
 }
@@ -16,6 +16,12 @@ body {
   font-family: "Playfair", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.overlay{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(236,236,236,1);
+  position: absolute
 }
 .on, .off{
   display: inline-block;
