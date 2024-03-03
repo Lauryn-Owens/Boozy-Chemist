@@ -5,6 +5,7 @@ import style from "../../ComponentStyles/AgeVerifierStyle/ageVerifierModalStyle.
 const AgeVerifierModal = ({ modalOpen, setPageClickable }) => {
   const [birthYear, setBirthYear] = useState('');
   const [ageVerified, setAgeVerified] = useState(null);
+  const[age, setAge] = useState(null);
 
   const handleInputChange = (event) => {
     setBirthYear(event.target.value);
@@ -15,17 +16,17 @@ const AgeVerifierModal = ({ modalOpen, setPageClickable }) => {
     const currentYear = new Date().getFullYear();
     const enteredYear = parseInt(birthYear);
     const age = currentYear - enteredYear;
-
+    
     if (age >= 21) {
       setAgeVerified(true);
          //if of age-21 or over they can freely browse the site
       setPageClickable(true);
-    } else {
-        /*if under age - under 21 the modal content changes and all of the links are disabled
-        and the user cannot access the page
-        */
-      setAgeVerified(false);
     }
+    else{
+      //get difference in years
+      setAge(age);
+    }
+    return;
   };
 
   if (!modalOpen) {
@@ -46,8 +47,18 @@ const AgeVerifierModal = ({ modalOpen, setPageClickable }) => {
             onChange={handleInputChange}
           />
           <button className={style.verifyAge} onClick={(e) => verifyAge(e)}>Verify Age</button>
-          {!ageVerified ? <p>You must be 21 or older to proceed.</p> : null}
-
+          {
+            age === null && (
+          <p className={style.ageText}>
+            You must be 21 or older to proceed.
+          </p> 
+        )}
+        {
+          age !== null && age < 21 && (
+          <p className={style.ageText}>
+            You are only {age} years old. Come back in {21 - age} years.
+          </p>
+        )}
         </div>
       )}
     </section>,
